@@ -13,12 +13,7 @@ categories:
     labels:
       - "chore"
       - "dependencies"
-  - title: "🔨 Other Changes"
-    labels:
-      - "*" # Catch-all for any other labeled PRs
-change-template: |
-  - $TITLE @$AUTHOR (#$NUMBER)
-    $BODY
+change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
 template: |
   ## Changes
 
