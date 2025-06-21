@@ -64,6 +64,9 @@
               "hidden": true
             }
           ]
+        },
+        "writerOpts": {
+          "commitPartial": "* {{header}}\n\n{{#if body}}\n\n  ```text\n  {{body}}\n  ```\n\n{{/if}}\n\n"
         }
       }
     ],
