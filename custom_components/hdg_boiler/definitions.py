@@ -2061,7 +2061,7 @@ SENSOR_DEFINITIONS: Final[dict[str, SensorDefinition]] = {
         "ha_platform": "sensor",
         "ha_device_class": SensorDeviceClass.ENERGY,
         "ha_native_unit_of_measurement": UnitOfEnergy.KILO_WATT_HOUR,
-        "ha_state_class": None,
+        "ha_state_class": SensorStateClass.MEASUREMENT,
         "icon": "mdi:battery-charging",
         "writable": False,
         "parse_as_type": "float",
