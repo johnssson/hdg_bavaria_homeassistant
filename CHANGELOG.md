@@ -1,3 +1,18 @@
+## [0.7.2](https://github.com/banter240/hdg_bavaria_homeassistant/compare/v0.7.1...v0.7.2) (2025-06-21)
+
+### 🐛 Bug Fixes
+
+* fix(build): Correct ZIP archive structure for HACS
+
+
+  ```text
+  The previous version of the publish.sh script created a ZIP file containing a parent directory (e.g., hdg_boiler/).
+
+This incorrect structure prevents HACS from correctly installing and loading the integration, as it expects the component's files (manifest.json, etc.) to be at the root of the archive.
+
+This commit modifies the script to change directory into the component's source folder before running the zip command. By zipping the contents ('.') from within that directory, the resulting archive now has the correct flat structure required by HACS.
+  ```
+
 ## [0.7.1](https://github.com/banter240/hdg_bavaria_homeassistant/compare/v0.7.0...v0.7.1) (2025-06-21)
 
 ### 🐛 Bug Fixes
