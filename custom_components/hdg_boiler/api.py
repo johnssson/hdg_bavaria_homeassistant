@@ -220,7 +220,12 @@ class HdgApiClient:
                 continue
 
             # Log if unexpected fields are present, but still process the item.
-            if unexpected_fields := set(item.keys()) - {"id", "text"}:
+            if unexpected_fields := set(item.keys()) - {
+                "id",
+                "text",
+                "background",
+                "hidden",
+            }:
                 _LOGGER.info(
                     f"Item at index {idx} in dataRefresh response (payload: {node_payload_str}) "
                     f"has unexpected fields {unexpected_fields}: {item!r}"
