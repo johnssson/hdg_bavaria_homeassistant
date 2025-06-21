@@ -9,7 +9,8 @@
 #   release assets. It performs the following steps:
 #     1. Validates script arguments and required tools (zip, jq).
 #     2. Updates the 'version' in manifest.json.
-#     3. Creates a versioned, HACS-compatible ZIP archive of the component.
+#     3. Creates a versioned, HACS-compatible ZIP archive with the correct
+#        internal structure.
 #     4. Updates the 'hacs.json' manifest with the new versioned filename.
 #
 # ==============================================================================
@@ -42,7 +43,7 @@ if [ $# -ne 1 ]; then
 fi
 log_info "All checks passed."
 
-# --- Configuration Variables (IN CORRECT ORDER) ---
+# --- Configuration Variables ---
 readonly NEXT_RELEASE_VERSION="$1"
 readonly DOMAIN="hdg_boiler"
 readonly DIST_DIR="dist"
@@ -68,14 +69,15 @@ fi
 log_info "Ensuring distribution directory '${DIST_DIR}' exists..."
 mkdir -p "${DIST_DIR}"
 
-# 3. Create the ZIP archive
+# 3. Create the ZIP archive with the correct internal structure for HACS
 log_info "Creating ZIP archive at '${DIST_DIR}/${ZIP_FILENAME}'..."
-# Change into the 'custom_components' directory to get the right structure
-cd custom_components
-zip -r "../${DIST_DIR}/${ZIP_FILENAME}" "${DOMAIN}" -x "*/__pycache__/*" "*.pyc" ".DS_Store"
-# Go back to the root directory
-cd ..
-log_success "ZIP archive created successfully."
+# Change directory INTO the component's source folder
+cd "${SOURCE_DIR}"
+# Zip the CONTENTS of the current directory ('.') into the dist folder, which is now two levels up.
+zip -r "../../${DIST_DIR}/${ZIP_FILENAME}" . -x "*/__pycache__/*" "*.pyc" ".DS_Store"
+# Go back to the original root directory
+cd ../..
+log_success "ZIP archive with correct HACS structure created successfully."
 
 
 # 4. Update hacs.json

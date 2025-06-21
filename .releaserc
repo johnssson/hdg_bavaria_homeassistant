@@ -80,7 +80,7 @@
     [
       "@semantic-release/git",
       {
-        "message": "chore(release): 🚀 publish version ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
+        "message": "chore(release): 🚀 publish version ${nextRelease.version}\n\n${nextRelease.notes}\n\n[skip ci]",
         "assets": [
           "hacs.json",
           "CHANGELOG.md",
