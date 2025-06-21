@@ -1,9 +1,3 @@
-# Final recommended configuration for pre-commit hooks, combining:
-# - Standard hooks for file integrity.
-# - Ruff for linting and formatting.
-# - mypy for static type analysis.
-# - Sourcery for AI-powered code refactoring suggestions.
-
 repos:
   # Standard hooks for file integrity and basic checks.
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -34,5 +28,3 @@ repos:
     rev: "v1.37.0"
     hooks:
       - id: sourcery
-        # You might need to sign up for a Sourcery token for full functionality
-        # and add it to your environment if you use more advanced features.
