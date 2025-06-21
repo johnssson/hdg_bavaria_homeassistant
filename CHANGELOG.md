@@ -1,3 +1,25 @@
+## [0.7.3](https://github.com/banter240/hdg_bavaria_homeassistant/compare/v0.7.2...v0.7.3) (2025-06-21)
+
+### 🐛 Bug Fixes
+
+* fix(hdg_boiler): Reduce excessive INFO logging for unexpected API fields
+
+The HDG boiler API frequently returns 'hidden' and 'background' fields which, while technically
+"unexpected" based on the initial explicit field list, are consistently present and do not
+indicate a functional issue. The current logging configuration results in a high volume of
+INFO level messages for each data refresh, even in debug mode, leading to unnecessary log
+spam and obscuring potentially more critical information.
+
+This commit updates the `_async_handle_data_refresh_response` method in `api.py` to
+explicitly include 'hidden' and 'background' in the set of expected fields. This change
+ensures that the INFO log message "Item has unexpected fields" is only triggered for
+truly new or unknown fields returned by the API, significantly reducing log output
+without losing valuable information about genuinely unexpected data structures.
+
+The core functionality of processing the API response remains unchanged, as these fields
+were already being safely ignored. This is purely a logging refinement to improve system
+observability and reduce noise.
+
 ## [0.7.2](https://github.com/banter240/hdg_bavaria_homeassistant/compare/v0.7.1...v0.7.2) (2025-06-21)
 
 ### 🐛 Bug Fixes
