@@ -1,3 +1,59 @@
+## [0.9.0](https://github.com/banter240/hdg_bavaria_homeassistant/compare/v0.8.0...v0.9.0) (2025-08-12)
+
+### ✨ New Features
+
+* feat(architecture): major architectural refactor and intelligent debouncing
+
+Introduce HdgEntityRegistry to centralize entity and polling group definitions, replacing polling_manager
+
+
+
+Overhaul HdgDataUpdateCoordinator with cleaner state management using typed dictionaries (PollingState, SetterState) and robust error handling
+
+
+
+Restructure definitions.py with factory functions (e.g., create_temp_sensor) for streamlined sensor and number entity creation, reducing boilerplate and enhancing readability
+
+
+
+Move logic into dedicated helper modules for parsing, validation, and API access
+
+
+
+Add support for select entities to control operational modes
+
+
+
+Implement concurrent polling in HdgDataUpdateCoordinator (coordinator.py) for faster data refresh and reduced update times
+
+
+
+Add intelligent debouncing for writable entities (number, select), grouping rapid value changes to prevent API overload and unnecessary calls if final value matches initial state
+
+
+
+Enhance debouncing with optimistic state updates and generation tracking to ensure UI responsiveness and prevent stale API requests
+
+
+
+Refactor config_flow.py for clarity, separating initial setup (HdgBoilerConfigFlow) and options management (HdgBoilerOptionsFlowHandler)
+
+
+
+Improve api.py client with clearer, more robust error handling and concise methods for boiler API interactions
+
+
+
+Fix potential race conditions in command handling for reliable operation
+
+
+
+Ensure consistent and reliable startup and data fetching
+
+
+
+Update README to reflect new architecture and features
+
 ## [0.8.0](https://github.com/banter240/hdg_bavaria_homeassistant/compare/v0.7.4...v0.8.0) (2025-07-04)
 
 ### ✨ New Features
