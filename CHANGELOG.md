@@ -1,3 +1,24 @@
+## [0.10.0](https://github.com/banter240/hdg_bavaria_homeassistant/compare/v0.9.0...v0.10.0) (2025-08-14)
+
+### ✨ New Features
+
+* feat(core): add connection error threshold and refactor error handling
+
+This commit introduces a new configuration option, `error_threshold`, to control the number of consecutive connection errors before the integration enters a failure state.
+
+It also includes a major refactoring of the error handling logic in the `HdgDataUpdateCoordinator`:
+
+- Re-introduces the `_update_polling_status` function to simplify error handling and improve readability.
+- The `_handle_update_failure` function now distinguishes between connection and polling failures.
+- The `_async_update_data` function is updated to use the new error handling mechanism.
+
+Additionally, this commit includes the following changes:
+
+- The `betriebsart` select entity no longer includes the "urlaub" (holiday) option.
+- Removes deprecated code from the config flow.
+- Adds and updates translations for the new and modified options.
+- Updates the `README.md` to document the new `error_threshold` option.
+
 ## [0.9.0](https://github.com/banter240/hdg_bavaria_homeassistant/compare/v0.8.0...v0.9.0) (2025-08-12)
 
 ### ✨ New Features
