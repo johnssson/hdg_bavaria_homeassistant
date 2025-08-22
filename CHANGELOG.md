@@ -1,3 +1,14 @@
+## [0.11.0](https://github.com/banter240/hdg_bavaria_homeassistant/compare/v0.10.0...v0.11.0) (2025-08-22)
+
+### ✨ New Features
+
+* feat(logging): Add configurable log level for preemption errors and fix number entities
+
+This commit introduces a new feature to control the logging of API preemption errors and fixes issues with number entities.
+
+- **Feature**: A new option `log_level_threshold_for_preemption_errors` allows users to define how many consecutive preemption errors must occur before the log level is escalated from INFO to WARNING. This helps in reducing log noise from expected preemptions during normal operation.
+- **Fix**: The handling of `number` entities has been improved to correctly parse integer values and to make optimistic updates more reliable. This prevents values from being displayed as floats when they should be integers and ensures the UI reflects the user's intent immediately.
+
 ## [0.10.0](https://github.com/banter240/hdg_bavaria_homeassistant/compare/v0.9.0...v0.10.0) (2025-08-14)
 
 ### ✨ New Features
