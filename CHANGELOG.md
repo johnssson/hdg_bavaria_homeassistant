@@ -1,3 +1,21 @@
+## [0.12.0](https://github.com/banter240/hdg_bavaria_homeassistant/compare/v0.11.0...v0.12.0) (2025-09-18)
+
+### ✨ New Features
+
+* feat(boiler): add smart recovery with fallback ping and improve stability
+
+- add configurable fallback ping interval to periodically check boiler availability when offline
+- trigger immediate refresh on successful ping response for faster recovery
+- clamp ping delay between min and max limits to avoid zero/negative delays
+- revert to fixed interval ping logic for predictable recovery and disable ping if interval set to 0
+- refactor ping unsubscribe logic into helper method to reduce duplication
+- refactor fallback ping to use async_track_time_interval for cleaner, more robust scheduling
+- fix rounding logic in number.py using "round half up" method (math.floor(value + 0.5))
+- fix unload bug by calling correct cleanup function in API access manager
+- refactor const.py with cleaner organization of ping constants and added comments
+- update .gitleaks.toml rules to correctly allowlist the ping unsubscribe variable
+- update readme with ICMP ping prerequisites and fallback ping config options with translations
+
 ## [0.11.0](https://github.com/banter240/hdg_bavaria_homeassistant/compare/v0.10.0...v0.11.0) (2025-08-22)
 
 ### ✨ New Features
