@@ -1,4 +1,12 @@
-# HDG Bavaria Boiler Integration for Home Assistant
+# HDG Bavaria Boiler Integration (Test Fork)
+
+> ⚠️ **Hinweis:**  
+> Dies ist ein **Test- und Entwicklungs-Fork** des Originalprojekts  
+> 👉 [banter240/hdg_bavaria_homeassistant](https://github.com/banter240/hdg_bavaria_homeassistant)  
+> Dieses Repository dient ausschließlich zu Entwicklungs-, Übersetzungs- und Testzwecken.  
+> Bitte verwende das **Original-Repository** für produktive Installationen und offizielle Releases.
+
+---
 
 [![semantic-release: conventional commits](https://img.shields.io/badge/semantic--release-conventionalcommits-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/banter240/hdg_bavaria_homeassistant)](https://github.com/banter240/hdg_bavaria_homeassistant/releases/latest)
@@ -8,41 +16,29 @@
 ![GitHub issues by-label](https://img.shields.io/github/issues/banter240/hdg_bavaria_homeassistant/bug?color=red)
 ![GitHub contributors](https://img.shields.io/github/contributors/banter240/hdg_bavaria_homeassistant)
 
-<!-- Optional: Add more badges like community forum, buy me a coffee if you set them up -->
-
-An unofficial Home Assistant integration to monitor and control HDG Bavaria heating systems. This integration communicates with the boiler's web interface to retrieve data and send commands.
-
----
-
-> 🚧 **Development Status:** This integration is an early release and should be considered in a "beta" stage. While it is actively used and currently runs stable (e.g., on an HDG Euro 50 model without known issues), further development and refinements are ongoing. Your feedback and contributions are highly appreciated!
+An unofficial Home Assistant integration to monitor and control HDG Bavaria heating systems.  
+This integration communicates with the boiler's web interface to retrieve data and send commands.
 
 ---
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+> 🚧 **Development Status:**  
+> This is an early-stage integration actively being improved.  
+> Stable on tested systems (e.g., HDG Euro 50), but under continuous development.
+
+---
 
 **Table of Contents**
 
 - [About This Integration](#about-this-integration)
 - [Features](#features)
-- [Prerequisites](#prerequisites)
 - [Installation](#installation)
-  - [Via HACS (Recommended)](#via-hacs-recommended)
-  - [Manual Installation](#manual-installation)
 - [Configuration](#configuration)
-  - [Initial Setup](#initial-setup)
-  - [Integration Options](#integration-options)
 - [Supported Entities](#supported-entities)
-  - [Sensors](#sensors)
-  - [Number Entities (Controls)](#number-entities-controls)
-  - [Select Entities (Controls)](#select-entities-controls)
 - [Services](#services)
-  - [hdg_boiler.set_node_value](#hdg_boilerset_node_value)
-  - [hdg_boiler.get_node_value](#hdg_boilerget_node_value)
 - [Troubleshooting & Debugging](#troubleshooting--debugging)
 - [Contributing](#contributing)
-- [Disclaimer](#disclaimer)
 - [License](#license)
+
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
