@@ -5,6 +5,7 @@
 > 👉 [banter240/hdg_bavaria_homeassistant](https://github.com/banter240/hdg_bavaria_homeassistant)  
 > Dieses Repository dient ausschließlich zu Entwicklungs-, Übersetzungs- und Testzwecken.  
 > Bitte verwende das **Original-Repository** für produktive Installationen und offizielle Releases.
+<!-- trigger build -->
 
 ---
 
